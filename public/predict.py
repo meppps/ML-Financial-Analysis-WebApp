@@ -176,6 +176,7 @@ def forecast(ma1,ma2,ticker,from_date,to_date):
     # plt.show()
 
     plt.savefig('static/predict.png')
+    plt.close()
 
     results = {
         'trend':forecastedTrend
