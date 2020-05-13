@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+body{
+    font-family: 'Quicksand','Roboto','arial','sans-serif';
+    padding: 0;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+.nav{
+    margin: 0;
+    background-color: aquamarine;
+    padding: 20px 20px 20px 20px;
+    font-size: 25px;
+    text-align: center;
+    color: #000;
+}
+
+.ma1,.ma2,.company{
+    padding:10px;
+}
+
+.studies{
+    display: inline-flex;
+}
+.params{
+    display: inline-flex;
+    align-items: center;
+    margin: auto;
+}
+h2,h3,h4{
+    text-align: center !important;
+}
+.studiesh3{
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#sectOne{
+
+    margin-left: 20%;
+    margin-right: 10%;
+
+    display: flex;
+
+}
+
+#sectTwo{
+
+}
+
+input{
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding-left: 5px;
+}
+
+.wrapper{
+ text-align: center !important;
+ margin: auto ;
+ display: contents !important;
+ flex-direction: column;
+}
+
+.button{
+    width: 50%;
+    margin-top: 10px;
+    background-color: aquamarine;
+    border: 0;
+    border-radius: 5px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.analysis{
+    margin: auto;
+}
+
+table{
+    background-color: #f0f0f0;
+    color: #000;
+    border: 1;
+    padding: 10px
+}
+
+td{
+    padding: 10px;
+    font-size: 18px;
+}
+
+.data-form{
+    /* width: 200px; */
+    margin-top: 6%;
+}
+
+#multi-form,#sectTwo{
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+/* .figure{
+    width: 738px;
+    height: 387px;
+} */
+
+.menu{
+    /* display: inline-flex; */
+    float: right;
+    display: inline-grid !important;  
+    /* background-color: #f4f4f4; */
+    /* color: #fff; */
+    font-size: 18px;
+    float: right;
+    z-index: 0;
+    position: absolute;
+    left: 0px;
+    text-align: center;
+}
+.sub{
+    display: inline-grid !important;
+    /* background-color: #f4f4f4; */
+    color: #000;
+}
+
+.menu > a, .sub > a{
+    color: #000;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.menu:hover{
+    background-color: #f4f4f4;
+    color: #000 !important;
+}
+
+.menu > a:hover{
+    color: #000 !important;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+
+.center{
+    text-align: center;
+}
+
+.plot{
+    /* display: flex; */
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.plot img{
+    width: fit-content;
+}
+
+figure.row{
+    display: inline-flex;
+}
+
+#buttonArea{
+    display: flex;
+    margin: auto;
+}
+
+.hamburger{
+    background: transparent;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    outline: none;
+    cursor: pointer;
+    border: 5px solid #f44336;
+    border-radius: 4px;
+    transition: .5s;
+    transform: translate(-50%,-50%);
+}
+
+.let{
+    position: relative;
+    height: 8px;
+    width: 80px;
+    background: #fff;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: block;
+    border-radius: 4px;
+    transition: .5s;
+    transform-origin: center;
+}
+.hamburger:hover{
+    border-radius: 50%;
+}
+
+.hamburger:hover .let:nth-child(1){
+    transform: translate(24px) rotate(-45deg);
+}
+
+.hamburger:hover .let:nth-child(2){
+    opacity: 0;
+}
+
+.button:hover .menu:nth-child(3){
+    transform: translate(-24px) rotate(-45deg);
+}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block content %}
+<h1 class="center">Multistock comparison</h1>
+<h3 class="center">Compare multiple tickers simultaneously using our algorithm</h3>
+
+<section id="sectTwo">
+    <!-- <div class="data-form" > -->
+      
+        <form action="/multi" method="POST" id="multi-form" class="data-form" style="width: 1000px !important;">
+            <label>Symbol 1</label>
+
+            <input class="form-control" type="text" id="symbol1" placeholder="AMZN" value="{{ ticker }}" name="symbol1">
+
+            <label>Symbol 2</label>   
+
+            <input class="form-control" type="text" id="symbol2" placeholder="AAPL" value="{{ from_date }}"name="symbol2">
+        
+            <label>Symbol 3</label>
+            
+            <input class="form-control" type="text" id="symbol3" placeholder="SPCE" value="{{ to_date }}" name="symbol3">
+          
+            <label>Symbol 4</label>
+
+            <input class="form-control" type="text" id="symbol4" placeholder="TSLA" value="{{ ma1 }}" name="symbol4">
+            <div id="buttonArea">
+            <button type="submit" class="button" style="width: 25% !important; margin: auto; margin-top: 10px;">Set</button>
+        </div>
+        </form>
+
+            <figure class="row">
+
+            <div class="plot">
+                <h3>Heatmap</h3>
+                <img src="{{ url_for('static', filename = 'heatmap.png') }}" alt="">
+            </div>
+
+            <div class="plot">
+                <h3>Scatter Returns</h3>
+                <img src="{{ url_for('static', filename = 'scatter.png') }}" alt="">
+            </div>
+
+            <div class="plot">
+                <h3>Risk vs Expected Returns</h3>
+                <img src="{{ url_for('static', filename = 'riskreturn.png') }}" alt="">
+            </div>
+
+        </figure>
+
+        
+        
+</section>
+
+{% endblock %}
