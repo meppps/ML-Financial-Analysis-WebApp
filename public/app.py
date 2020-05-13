@@ -25,14 +25,6 @@ app=Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/data")
-def get_data():
-    start_date = datetime.datetime(2016, 1, 1)
-    ## Select today's date as end date
-    end_date = datetime.datetime.now().date().isoformat() 
-
-    stocks_df = web.DataReader('FB', 'yahoo', start_date, end_date)
-    return jsonify(stocks_df.to_dict("records"))
 
 
 @app.route("/submit",methods=["POST","GET"])
