@@ -15,7 +15,8 @@ from sklearn.linear_model import Ridge
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
-from analyze import generatePlot
+# from analyze import generatePlot
+from .analyze import generatePlot
 from predict import forecast
 from scrape import scrape
 from multistock import multiStock
