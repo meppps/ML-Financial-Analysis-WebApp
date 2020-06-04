@@ -2,10 +2,8 @@
 {% block title %}{% endblock %}
 
 {% block content %}
-{{ ma1 }}
-{{ ma2 }}
-{{ ticker }}
 
+<h2 class="center">Forecast</h2>
 <section id="sectOne">
     <div class="wrapper">
 
@@ -77,13 +75,18 @@
                 <td>Market Cap:</td>
                 <td>{{ cap }}</td>
             </tr>    
-        <!-- <tr>
-            <td>Predicted Change</td>
-            <td></td>
-        </tr> -->
         </table>
+        
     </div>
 
+  
+
+</section>
+
+<section id="sectTwo">
+    <div class="Forecast">
+        {{ value }}
+    </div>
 </section>
 
 
@@ -91,6 +94,6 @@
 </body>
 <script src="./static/autocaps.js"></script>
 
-
+<script src="./static/logic.js"></script>
 </html>
 {% endblock %}

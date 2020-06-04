@@ -8,8 +8,8 @@ if(marketOpen){
     // document.body.style.cssText 
 }else{
     console.log('Market is closed');
-    document.body.style.background = '#333'
-    document.body.style.color = '#fff'
+    // document.body.style.background = '#333'
+    // document.body.style.color = '#fff'
 }
 
 //tutor note:assuming you know what the running 20 day avg. and 200 day avg. is

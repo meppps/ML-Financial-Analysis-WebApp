@@ -20,7 +20,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 
 def parseDate(date):
-    format_str = '%m/%d/%y' # The format
+    format_str = "%m/%d/%y" # The format
     datetime_obj = datetime.datetime.strptime(date, format_str).date().isoformat()
     print(datetime_obj)
     return datetime_obj
@@ -33,9 +33,14 @@ def forecast(ma1,ma2,ticker,from_date,to_date):
     plt.clf()
   
     # start_date = datetime.datetime(2016, 5, 10)
-    # end_date = datetime.datetime.now().date().isoformat()
+    if to_date == '0':
+        end_date = datetime.datetime.now().date().isoformat()
+    else:
+        end_date = to_date
+
     start_date = parseDate(from_date)
-    end_date = parseDate(to_date) 
+    
+    # end_date = parseDate(to_date) 
 
     stocks_df = web.DataReader(ticker, 'yahoo', start_date, end_date)
 
@@ -43,6 +48,7 @@ def forecast(ma1,ma2,ticker,from_date,to_date):
 
     closing_price_df.index = pd.to_datetime(closing_price_df.index)
 
+    print(closing_price_df.tail(1))
 
     ## calc moving averages
     ## temp
@@ -155,6 +161,9 @@ def forecast(ma1,ma2,ticker,from_date,to_date):
     dfreg['Adj Close'].tail(500).plot(color='black')
     dfreg['Forecast'].tail(500).plot(color='orange',label='Forecast')
 
+    forecastHTML = pd.DataFrame(dfreg['Forecast'].tail(8)).to_html()
+    
+
     def trend():
         forecastDF = dfreg['Forecast'].tail(500).dropna()
         if forecastDF.tail(1).squeeze() > forecastDF.head(1).squeeze(): 
@@ -178,7 +187,8 @@ def forecast(ma1,ma2,ticker,from_date,to_date):
     plt.savefig('static/predict.png')
 
     results = {
-        'trend':forecastedTrend
+        'trend':forecastedTrend,
+        'html':forecastHTML
     }
 
     return results

@@ -7,22 +7,34 @@
 <section id="sectTwo">
     <!-- <div class="data-form" > -->
       
-        <form action="/multi" method="POST" id="multi-form" class="data-form" style="width: 1000px !important;">
+        <form action="/multi" method="POST" id="multi-form" class="data-form" style="">
+            <div class="row1">
             <label>Symbol 1</label>
 
-            <input class="form-control" type="text" id="symbol1" placeholder="AMZN" value="{{ ticker }}" name="symbol1">
+            <input class="form-control" type="text" id="symbol1" placeholder="AMZN" value="{{ ticker1 }}" name="symbol1">
 
             <label>Symbol 2</label>   
 
-            <input class="form-control" type="text" id="symbol2" placeholder="AAPL" value="{{ from_date }}"name="symbol2">
+            <input class="form-control" type="text" id="symbol2" placeholder="AAPL" value="{{ ticker2 }}"name="symbol2">
         
             <label>Symbol 3</label>
+ 
             
-            <input class="form-control" type="text" id="symbol3" placeholder="SPCE" value="{{ to_date }}" name="symbol3">
-          
+            <input class="form-control" type="text" id="symbol3" placeholder="SPCE" value="{{ ticker3 }}" name="symbol3">
+        </div>
+            <br>
             <label>Symbol 4</label>
 
-            <input class="form-control" type="text" id="symbol4" placeholder="TSLA" value="{{ ma1 }}" name="symbol4">
+            <input class="form-control" type="text" id="symbol4" placeholder="TSLA" value="{{ ticker4 }}" name="symbol4">
+            
+            <label>From Date</label>
+
+            <input class="form-control" type="text" id="from_date" placeholder="5/11/17" value="{{ from_date }}" name="from_date">
+
+            <label>To Date</label>
+
+            <input class="form-control" type="text" id="to_date" placeholder="5/11/20" value="{{ to_date }}" name="to_date">
+
             <div id="buttonArea">
             <button type="submit" class="button" style="width: 25% !important; margin: auto; margin-top: 10px;">Set</button>
         </div>

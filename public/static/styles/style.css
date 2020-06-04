@@ -102,6 +102,11 @@ td{
     margin-right: auto;
     display: table;
 }
+
+#multi-form > input{
+    padding: 5px;
+    margin: 5px;
+}
 /* .figure{
     width: 738px;
     height: 387px;
@@ -158,7 +163,7 @@ td{
 }
 
 .plot img{
-    width: fit-content;
+    width: 500px;
 }
 
 figure.row{
@@ -211,4 +216,23 @@ figure.row{
 
 .button:hover .menu:nth-child(3){
     transform: translate(-24px) rotate(-45deg);
+}
+.row1{
+    margin-left: 14px;
+}
+
+.Forecast{
+    position: relative;
+    right: -547px;
+}
+
+table.dataframe{
+    background-color: #f0f0f0;
+    color: #000;
+    border: 0 !important;
+    padding: 10px;
+}
+
+table.dataframe > thead,th,tbody,tr,td{
+    border: 0 !important;
 }

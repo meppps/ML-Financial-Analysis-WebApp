@@ -18,6 +18,8 @@ from sklearn.model_selection import train_test_split
 from analyze1 import generatePlot
 from predict import forecast
 from scrape import scrape
+from multistock import multiStock
+from flask import Markup
 
 app=Flask(__name__)
 
@@ -25,6 +27,14 @@ app=Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/data")
+def get_data():
+    start_date = datetime.datetime(2016, 1, 1)
+    ## Select today's date as end date
+    end_date = datetime.datetime.now().date().isoformat() 
+
+    stocks_df = web.DataReader('FB', 'yahoo', start_date, end_date)
+    return jsonify(stocks_df.to_dict("records"))
 
 
 @app.route("/submit",methods=["POST","GET"])
@@ -52,14 +62,26 @@ def submit():
         quarter = data['quarter']
 
         trend = results['trend']
+        value=Markup(results['html'])
+
         img = './static/predict.png'
-        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter)   
+        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value)   
     else:
         return render_template("submit.html")
 
-@app.route('/multi')
+@app.route('/multi',methods=["POST","GET"])
 def multi():
-    return render_template('multi.html')
+    if request.method == 'POST':
+        ticker1 = request.form['symbol1']
+        ticker2 = request.form['symbol2']
+        ticker3 = request.form['symbol3']
+        ticker4 = request.form['symbol4']
+        from_date = request.form['from_date']
+        to_date = request.form['to_date']
+        multiStock(ticker1,ticker2,ticker3,ticker4,from_date,to_date)
+        return render_template('multi.html',ticker1=ticker1,ticker2=ticker2,ticker3=ticker3,ticker4=ticker4,from_date=from_date,to_date=to_date)
+    else:
+        return render_template('multi.html')
 
 @app.after_request
 def add_header(response):
