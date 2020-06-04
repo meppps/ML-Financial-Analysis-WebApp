@@ -85,7 +85,7 @@ def generatePlot(ma1,ma2,ticker):
     plt.title(ticker)
     plt.legend()
     # plt.show()
-    plt.savefig('static/mac.png')
+    plt.savefig('/static/mac.png')
 
     
 
