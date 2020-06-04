@@ -184,7 +184,7 @@ def forecast(ma1,ma2,ticker,from_date,to_date):
     plt.legend(loc='best')
     # plt.show()
 
-    plt.savefig('/static/predict.png')
+    plt.savefig('static/predict.png')
     plt.close()
 
     results = {
