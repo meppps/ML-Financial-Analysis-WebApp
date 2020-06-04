@@ -65,7 +65,7 @@ def submit():
         trend = results['trend']
         value=Markup(results['html'])
 
-        img = 'static/predict.png'
+        img = '/static/predict.png'
         return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value)   
     else:
         return render_template("submit.html")
