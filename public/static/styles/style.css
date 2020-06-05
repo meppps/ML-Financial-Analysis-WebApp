@@ -50,6 +50,10 @@ h2,h3,h4{
     padding: 10px;
 }
 
+.margin-auto{
+    margin: auto;
+}
+
 
 
 input{
@@ -191,29 +195,28 @@ form.data-form{
 }
 
 
-
-.button:hover .menu:nth-child(3){
-    transform: translate(-24px) rotate(-45deg);
-}
 .row1{
     margin-left: 14px;
 }
 
 .Forecast{
-    position: relative;
-    right: -547px;
+    /* position: relative;
+    right: -547px; */
 }
 
 table.dataframe{
     background-color: #f0f0f0;
     color: #000;
     border: 0 !important;
-    padding: 10px;
+    padding: 20px;
+    
 }
+
 
 table.dataframe > thead,th,tbody,tr,td{
     border: 0 !important;
 }
+
 
 
 @media screen and (max-width: 1300px){
@@ -264,5 +267,15 @@ img.figure{
     max-width: 100%;
     max-height: 100%;
 }
+
+table.dataframe{
+    width: 100%;
+}
+
+
+table.dataframe > thead > tr > th {
+    text-align: center !important;
+}
+
 
 }
