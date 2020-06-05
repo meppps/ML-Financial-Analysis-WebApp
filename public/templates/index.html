@@ -7,22 +7,13 @@
     <div class="center">
         <h2 class="center">Introduction</h2>
         <h3 class="center" style="width:800px">
-            This project is makes use of machine learning algorithms and technical indicators to perform financial analysis on the stock market. Nothing can predict the stock market to a tee, especially given the volatile market conditions. However, we can use tools to attempt to forecast directional movements in the market. This app is built on several technologies including:
-            <ul>
-                <li>Pandas / DataReader</li>
-                <li>Numpy</li>
-                <li>Yahoo Finance API</li>
-                <li>Matplotlib</li>
-                <li>Sci-Kit Learn</li>
-            </ul>
-            So the question remains, how will we make our stock picks? What are the potential risks and rewards for a stock compared to its competitors?
+            This project makes use of machine learning algorithms and technical indicators to perform financial analysis on any stock.  This app is built on several technologies including Python, Flask, Pandas, Matplotlib     
+           
+            <br>
+            <strong>Data Pipeline:</strong>
             <br>
             <br>
-            <strong>Analyzing:</strong>
-            <br>
-            We start off by analyzing historical price data. We do this by extracting the data via Yahoo Finance API and Pandas Data-Reader. We then perform exploratory analysis using a correlation heatmap, moving averages along with other Matplotlib visualizations and features. We also perform a predictive analysis using K Nearest Neighbor (KNN) and quadratic discriminant analysis. 
-
-            Using these features, we can attempt to guide our decision making process when making a trade.
+            The symbol you input is passed through to Yahoo Finance API. The app then web scrapes financial data in real time about that stock. The historical price data is fed into our machine learning algorithm (KNN) and a forecast and/or analysis is made. A prediction is plotted and everything is output back to the UI. 
         </h3>
     </div>
 </section>

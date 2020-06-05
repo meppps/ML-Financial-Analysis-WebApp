@@ -10,10 +10,11 @@ body{
 .nav{
     margin: 0;
     background-color: aquamarine;
-    padding: 20px 20px 20px 20px;
-    font-size: 25px;
+    padding-top: 5px;
+    font-size: 20px;
     text-align: center;
     color: #000;
+    width: 100%;
 }
 
 .ma1,.ma2,.company{
@@ -28,6 +29,7 @@ body{
     align-items: center;
     margin: auto;
 }
+
 h2,h3,h4{
     text-align: center !important;
 }
@@ -36,18 +38,19 @@ h2,h3,h4{
     margin-bottom: 0 !important;
 }
 
-#sectOne{
-
+.container{
+    display: flex !important;
     margin-left: 20%;
-    margin-right: 10%;
-
-    display: flex;
-
+    margin-right: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-#sectTwo{
-
+.col-md-4{
+    padding: 10px;
 }
+
+
 
 input{
     height: 30px;
@@ -58,12 +61,12 @@ input{
     padding-left: 5px;
 }
 
-.wrapper{
+/* .wrapper{
  text-align: center !important;
  margin: auto ;
  display: contents !important;
  flex-direction: column;
-}
+} */
 
 .button{
     width: 50%;
@@ -77,7 +80,9 @@ input{
 }
 
 .analysis{
-    margin: auto;
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
 }
 
 table{
@@ -175,44 +180,17 @@ figure.row{
     margin: auto;
 }
 
-.hamburger{
-    background: transparent;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    outline: none;
-    cursor: pointer;
-    border: 5px solid #f44336;
-    border-radius: 4px;
-    transition: .5s;
-    transform: translate(-50%,-50%);
+.center-figure{
+    /* margin-left: -130px;
+    margin-right: 330px; */
+    width: 680px !important;
 }
 
-.let{
-    position: relative;
-    height: 8px;
-    width: 80px;
-    background: #fff;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    display: block;
-    border-radius: 4px;
-    transition: .5s;
-    transform-origin: center;
-}
-.hamburger:hover{
-    border-radius: 50%;
+form.data-form{
+    width: 200px;
 }
 
-.hamburger:hover .let:nth-child(1){
-    transform: translate(24px) rotate(-45deg);
-}
 
-.hamburger:hover .let:nth-child(2){
-    opacity: 0;
-}
 
 .button:hover .menu:nth-child(3){
     transform: translate(-24px) rotate(-45deg);
@@ -235,4 +213,56 @@ table.dataframe{
 
 table.dataframe > thead,th,tbody,tr,td{
     border: 0 !important;
+}
+
+
+@media screen and (max-width: 1300px){
+    .container{
+        overflow: auto;
+        margin-left: 0%;
+        margin-right: 0%;
+        /* display: table-column; */
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+}
+
+div.col-md-4{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+div.data-form{
+    /* margin-left: 5px; */
+}
+
+form.data-form, form.data-form > .button{
+    width: 80% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.data-form > .button{
+    display: block;
+}
+
+
+input.form-control {
+    width: 100%;
+} 
+
+div.center-figure{
+    /* display: flex;
+    flex-direction: column; */
+    margin: unset !important;
+    max-width: 100%;
+}
+
+img.figure{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 }
