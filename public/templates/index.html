@@ -3,19 +3,29 @@
 
 {% block content %}
 <h1 class="center">Home</h1>
-<section id="sectTwo">
+
+<div class="container">
     <div class="center">
         <h2 class="center">Introduction</h2>
-        <h3 class="center" style="width:800px">
-            This project makes use of machine learning algorithms and technical indicators to perform financial analysis on any stock.  This app is built on several technologies including Python, Flask, Pandas, Matplotlib     
-           
+        <h3 class="center">This project makes use of machine learning algorithms and technical indicators to perform financial analysis on any stock.  This app is built on several technologies including Python, Flask, Pandas, and Matplotlib</h3>     
             <br>
-            <strong>Data Pipeline:</strong>
-            <br>
-            <br>
+            <h2 class="center">Data Pipeline:</h2>
+            <h3 class="center">
             The symbol you input is passed through to Yahoo Finance API. The app then web scrapes financial data in real time about that stock. The historical price data is fed into our machine learning algorithm (KNN) and a forecast and/or analysis is made. A prediction is plotted and everything is output back to the UI. 
         </h3>
+        <h2 class="center">Usage:</h2>
+        <h3 class="center">
+            - Enter a ticker <br>
+            - Start date of data you want to feed <br>
+            - Last date (cannot be in the future! Use todays date) <br>
+            - Try to use around a 2-3 year time frame for best results <br>
+            - # Day moving averages you would like to see 50/100 is good <br>
+            - The analysis tab will give you real-time data <br>
+            - The the alogrithm's estimated closign prices will show below
+        </h3>
     </div>
-</section>
+</div>
+<img src="{{ url_for('static', filename = 'sample.png') }}" alt="" class="figure margin-auto" style="display: block;">
+
 {% endblock %}
 

@@ -4,63 +4,67 @@
 <h1 class="center">Multistock comparison</h1>
 <h3 class="center">Compare multiple tickers simultaneously using our algorithm</h3>
 
-<section id="sectTwo">
-    <!-- <div class="data-form" > -->
-      
-        <form action="/multi" method="POST" id="multi-form" class="data-form" style="">
-            <div class="row1">
-            <label>Symbol 1</label>
+<div class="container container-right">
 
-            <input class="form-control" type="text" id="symbol1" placeholder="AMZN" value="{{ ticker1 }}" name="symbol1">
+<div class="data-form">
 
-            <label>Symbol 2</label>   
+    <form action="/multi" method="POST" id="multi-form" class="data-form" style="">
 
-            <input class="form-control" type="text" id="symbol2" placeholder="AAPL" value="{{ ticker2 }}"name="symbol2">
-        
-            <label>Symbol 3</label>
- 
-            
-            <input class="form-control" type="text" id="symbol3" placeholder="SPCE" value="{{ ticker3 }}" name="symbol3">
-        </div>
-            <br>
-            <label>Symbol 4</label>
+        <label>Symbol 1</label>
 
-            <input class="form-control" type="text" id="symbol4" placeholder="TSLA" value="{{ ticker4 }}" name="symbol4">
-            
-            <label>From Date</label>
+        <input class="form-control" type="text" id="symbol1" placeholder="AMZN" value="{{ ticker1 }}" name="symbol1">
 
-            <input class="form-control" type="text" id="from_date" placeholder="5/11/17" value="{{ from_date }}" name="from_date">
+        <label>Symbol 2</label>
 
-            <label>To Date</label>
+        <input class="form-control" type="text" id="symbol2" placeholder="AAPL" value="{{ ticker2 }}" name="symbol2">
 
-            <input class="form-control" type="text" id="to_date" placeholder="5/11/20" value="{{ to_date }}" name="to_date">
+        <label>Symbol 3</label>
 
-            <div id="buttonArea">
-            <button type="submit" class="button" style="width: 25% !important; margin: auto; margin-top: 10px;">Set</button>
-        </div>
-        </form>
 
-            <figure class="row">
+        <input class="form-control" type="text" id="symbol3" placeholder="SPCE" value="{{ ticker3 }}" name="symbol3">
 
-            <div class="plot">
-                <h3>Heatmap</h3>
-                <img src="{{ url_for('static', filename = 'heatmap.png') }}" alt="">
-            </div>
 
-            <div class="plot">
-                <h3>Scatter Returns</h3>
-                <img src="{{ url_for('static', filename = 'scatter.png') }}" alt="">
-            </div>
+        <label>Symbol 4</label>
 
-            <div class="plot">
-                <h3>Risk vs Expected Returns</h3>
-                <img src="{{ url_for('static', filename = 'riskreturn.png') }}" alt="">
-            </div>
+        <input class="form-control" type="text" id="symbol4" placeholder="TSLA" value="{{ ticker4 }}" name="symbol4">
 
-        </figure>
+        <label>From Date</label>
 
-        
-        
+        <input class="form-control" type="text" id="from_date" placeholder="5/11/17" value="{{ from_date }}"
+            name="from_date">
+
+        <label>To Date</label>
+
+        <input class="form-control" type="text" id="to_date" placeholder="5/11/20" value="{{ to_date }}" name="to_date">
+
+        <button type="submit" class="button" style="width: 25% !important; margin: auto; margin-top: 10px;">Set</button>
+    </form>
+
+</div>
+
+<figure class="row">
+
+    <div class="plot">
+        <h3>Correlation Heatmap</h3>
+        <img src="{{ url_for('static', filename = 'heatmap.png') }}" alt="">
+    </div>
+
+    <div class="plot">
+        <h3>Scatter Returns</h3>
+        <img src="{{ url_for('static', filename = 'scatter.png') }}" alt="">
+    </div>
+
+    <div class="plot">
+        <h3>Risk vs Expected Returns</h3>
+        <img src="{{ url_for('static', filename = 'riskreturn.png') }}" alt="">
+    </div>
+
+</figure>
+
+</div>
+
+
+
 </section>
 
 {% endblock %}

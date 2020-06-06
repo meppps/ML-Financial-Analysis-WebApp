@@ -17,6 +17,16 @@ body{
     width: 100%;
 }
 
+nav > a {
+    color: black;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+nav > a:hover, nav > h2:hover{
+    color: #fff;
+}
 .ma1,.ma2,.company{
     padding:10px;
 }
@@ -65,12 +75,6 @@ input{
     padding-left: 5px;
 }
 
-/* .wrapper{
- text-align: center !important;
- margin: auto ;
- display: contents !important;
- flex-direction: column;
-} */
 
 .button{
     width: 50%;
@@ -176,7 +180,8 @@ td{
 }
 
 figure.row{
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
 }
 
 #buttonArea{
@@ -215,6 +220,10 @@ table.dataframe{
 
 table.dataframe > thead,th,tbody,tr,td{
     border: 0 !important;
+}
+
+.container-right{
+    margin-left: 22%;
 }
 
 
