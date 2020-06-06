@@ -61,12 +61,12 @@ def submit():
         week = data['week']
         month = data['month']
         quarter = data['quarter']
-
+        headlines = data['headlines']
         trend = results['trend']
         value=Markup(results['html'])
 
         img = 'public/static/predict.png'
-        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value)   
+        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value,headlines=headlines)   
     else:
         return render_template("submit.html")
 

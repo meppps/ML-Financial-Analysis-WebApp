@@ -104,6 +104,18 @@
         {{ value }}
     </div>
 </div>
+
+<div class="col-md-4">
+    <table class="headlines">
+        <th><h2 class="center">Recent Headlines</h2></th>
+        <tbody>
+            {%for h in headlines%}
+            <tr><td>{{ h }}</td></tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
 </div>
 
 
