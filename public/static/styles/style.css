@@ -209,8 +209,7 @@ form.data-form{
 }
 
 .Forecast{
-    /* position: relative;
-    right: -547px; */
+    white-space: nowrap;
 }
 
 table.dataframe{
