@@ -94,6 +94,13 @@ def add_header(response):
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
 
+@app.errorhandler(404)
+def pageNotFound(error):
+    return render_template('404.html')
+
+@app.errorhandler(500)
+def notFound(error):
+    return render_template('error.html')
 
 if __name__ == "__main__":
     app.run()
