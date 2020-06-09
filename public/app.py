@@ -38,9 +38,16 @@ def get_data():
     return jsonify(stocks_df.to_dict("records"))
 
 
-@app.route("/submit",methods=["POST","GET"])
-def submit():
+@app.route('/prediction/',methods=['GET','POST'])
+def defaultPrediction():
+    return render_template('dynamicForecast.html')
+
+
+@app.route('/prediction/<stock>',methods=['GET','POST'])
+def prediction(stock):
     if request.method == 'POST':
+        # form = request.form
+        stock = request.form['ticker']
         req = request
         print(req.form)
         ticker = request.form['ticker']
@@ -65,10 +72,13 @@ def submit():
         trend = results['trend']
         value=Markup(results['html'])
 
-        img = 'public/static/predict.png'
-        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value,headlines=headlines)   
+        img = f'predict.png'
+
+
+        return render_template("dynamicForecast.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value,headlines=headlines)   
+        # return render_template('dynamicForecast.html',stock=stock)
     else:
-        return render_template("submit.html")
+        return render_template('dynamicForecast.html')
 
 @app.route('/multi',methods=["POST","GET"])
 def multi():
