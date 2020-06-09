@@ -124,21 +124,12 @@
 
 
 </body>
-<script src="./static/autocaps.js"></script>
+<script src="{{ url_for('static', filename = 'autocaps.js') }}"></script>
 
-<script src="./static/logic.js"></script>
+<script src="{{ url_for('static', filename = 'logic.js') }}"></script>
 
 <script src="{{ url_for('static', filename = 'form.js') }}"></script>
 
-<script>
-    //     document.querySelector('button.button').addEventListener('click',(e)=>{
-    //     e.preventDefault();
-    //     var inputTicker = document.querySelector('input#ticker').value;
-    //     document.querySelector('form.data-form').setAttribute('action',`/prediction/${inputTicker}`);
-    //     document.querySelector('form.data-form').submit();
-    // })
-
-</script>
 
 </html>
 {% endblock %}
