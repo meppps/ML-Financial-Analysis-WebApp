@@ -81,6 +81,12 @@ document.querySelector('button.button').addEventListener('click',(e)=>{
         return;
     }
     if(validDate() && filledInputs()){
+        // Set for dynamic URL (ONLY ON FORECAST PAGE)
+        if(document.querySelector('div.analysis')){
+            var inputTicker = document.querySelector('input#ticker').value;
+            document.querySelector('form.data-form').setAttribute('action',`/prediction/${inputTicker}`);
+        }
+
         document.querySelector('form.data-form').submit();
     }
     
