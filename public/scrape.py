@@ -21,12 +21,24 @@ def scrape(stock):
     week = col2['Perf Week']
     month = col2['Perf Month']
     quarter = col2['Perf Quarter']
+    
+    try:
+        newsList = []
+        headlines = pd.read_html(r.text,attrs={'id':'news-table'})[0][1]
+        if headlines.size >= 10:
+            for i in range(0,10):
+                headline = headlines[i]
+                newsList.append(headline)
+    except:
+        print('No headlines')
+        
     data = {
         'cap': marketCap,
         'price': price,
         'day': dailyChange,
         'week': week,
         'month': month,
-        'quarter': quarter
+        'quarter': quarter,
+        'headlines':newsList
     }
     return data

@@ -1,5 +1,5 @@
-console.log("js is loaded")
 
+// +/- colors for nums
 document.querySelectorAll('td').forEach((td)=>{
     if(td.innerText == 'NaN'){
         td.parentElement.style.display='none';
@@ -18,11 +18,5 @@ document.querySelectorAll('td').forEach((td)=>{
     }
 });
 
-// document.querySelectorAll('th').forEach((th)=>{
-//     if(th.innerText==""){
-//         th.style.height='0px';
-//         th.style.padding = '0px'
-//     }
-// });
 
 document.querySelector('table.dataframe').clientWidth = document.querySelector('table#analysisOne').clientWidth;

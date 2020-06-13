@@ -46,7 +46,7 @@ def multiStock(ticker1,ticker2,ticker3,ticker4,from_date,to_date):
     plt.title(f'Returns on {ticker1} and {ticker2}')
     # plt.legend()
 
-    plt.savefig('static/scatter.png')
+    plt.savefig('public/static/scatter.png')
 
     plt.clf()
 
@@ -54,7 +54,7 @@ def multiStock(ticker1,ticker2,ticker3,ticker4,from_date,to_date):
     plt.colorbar()
     plt.xticks(range(len(corr)), corr.columns)
     plt.yticks(range(len(corr)), corr.columns)
-    plt.savefig('static/heatmap.png')
+    plt.savefig('public/static/heatmap.png')
 
     plt.clf()
     
@@ -69,7 +69,7 @@ def multiStock(ticker1,ticker2,ticker3,ticker4,from_date,to_date):
             bbox = dict(boxstyle = 'round,pad=0.5', fc = 'yellow', alpha = 0.5),
             arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
 
-    plt.savefig('static/riskreturn.png')
+    plt.savefig('public/static/riskreturn.png')
 
     plt.clf()
 

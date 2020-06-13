@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+<title>Forecast</title>
+{% block content %}
+
+
+
+
+    <div class="container">
+
+        <div class="col-md-4">
+            <h2 class="center">Input</h2>
+            <div class="data-form">
+                <form action="/prediction" method="POST" class="data-form">
+                    <label>Symbol</label>
+
+                    <input class="form-control" type="text" id="ticker" placeholder="AMZN" value="{{ ticker }}"
+                        name="ticker">
+
+                    <label>From Date</label>
+
+                    <input class="form-control" type="text" id="from_date" placeholder="5/11/19" value="{{ from_date }}"
+                        name="from_date">
+                    <br>
+                    <label>To Date</label>
+
+                    <input class="form-control" type="text" id="to_date" placeholder="5/11/20" value="{{ to_date }}"
+                        name="to_date">
+
+                    <label>Moving Avg 1</label>
+
+                    <input class="form-control" type="text" id="ma1" placeholder="50" value="{{ ma1 }}" name="ma1">
+
+                    <label>Moving Avg 2</label>
+
+                    <input class="form-control" type="text" id="ma2" placeholder="100" value="{{ ma2 }}" name="ma2">
+                    <button type="submit" class="button">Set</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 center-figure">
+
+           
+                <h2 class="center">Forecast</h2>
+
+                {% if img %}
+                <img src="{{url_for('static', filename = ''+img)}}" alt="" class="figure">
+               {% else %}
+               <img src="{{ url_for('static', filename = 'predict.png') }}" alt="" class="figure">
+               {% endif %}
+        
+        </div>
+
+        <div class="col-md-4">
+            <div class="analysis">
+                <h2>Analysis</h2>
+                <table id="analysisOne">
+                    <tr>
+                        <td>Symbol:</td>
+                        <td>{{ ticker }}</td>
+                    </tr>
+                    <tr>
+                        <td>Forecast:</td>
+                        <td>{{ trend if trend != None else 'x' }}</td>
+                    </tr>
+                    <tr>
+                        <td>Current Price:</td>
+                        <td>{{ price }}</td>
+                    </tr>
+                    <tr>
+                        <td>Change Today:</td>
+                        <td>{{ day }}</td>
+                    </tr>
+                    <tr>
+                        <td>Perf (Week):</td>
+                        <td>{{ week }}</td>
+                    </tr>
+                    <tr>
+                        <td>Perf (Quarter):</td>
+                        <td>{{ quarter }}</td>
+                    </tr>
+                    <tr>
+                        <td>Market Cap:</td>
+                        <td>{{ cap }}</td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+<div class="container">
+    <div class="col-md-4">
+    <h2 class="center">Est. Closing Prices</h2>
+    <div class="Forecast">
+        {{ value }}
+    </div>
+</div>
+
+<div class="col-md-4">
+    <h2 class="center">Recent Headlines</h2>
+    <table class="headlines">
+        <th></th>
+        <tbody>
+            {%for h in headlines%}
+            <tr><td>{{ h }}</td></tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+
+</div>
+
+
+
+</body>
+<script src="{{ url_for('static', filename = 'autocaps.js') }}"></script>
+
+<script src="{{ url_for('static', filename = 'logic.js') }}"></script>
+
+<script src="{{ url_for('static', filename = 'form.js') }}"></script>
+
+
+</html>
+{% endblock %}

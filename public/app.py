@@ -15,10 +15,11 @@ from sklearn.linear_model import Ridge
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
-from analyze1 import generatePlot
-from predict import forecast
-from scrape import scrape
-from multistock import multiStock
+# from analyze import generatePlot
+from .analyze import generatePlot
+from .predict import forecast
+from .scrape import scrape
+from .multistock import multiStock
 from flask import Markup
 
 app=Flask(__name__)
@@ -37,9 +38,16 @@ def get_data():
     return jsonify(stocks_df.to_dict("records"))
 
 
-@app.route("/submit",methods=["POST","GET"])
-def submit():
+@app.route('/prediction/',methods=['GET','POST'])
+def defaultPrediction():
+    return render_template('dynamicForecast.html')
+
+
+@app.route('/prediction/<stock>',methods=['GET','POST'])
+def prediction(stock):
     if request.method == 'POST':
+        # form = request.form
+        stock = request.form['ticker']
         req = request
         print(req.form)
         ticker = request.form['ticker']
@@ -60,14 +68,17 @@ def submit():
         week = data['week']
         month = data['month']
         quarter = data['quarter']
-
+        headlines = data['headlines']
         trend = results['trend']
         value=Markup(results['html'])
 
-        img = './static/predict.png'
-        return render_template("submit.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,img=img,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value)   
+        # img = f'predict.png'
+
+
+        return render_template("dynamicForecast.html",from_date=from_date,to_date=to_date,ma1=ma1,ma2=ma2,ticker=ticker,crossover=crossover,trend=trend,cap=cap,price=price,day=day,week=week,month=month,quarter=quarter,value=value,headlines=headlines)   
+        # return render_template('dynamicForecast.html',stock=stock)
     else:
-        return render_template("submit.html")
+        return render_template('dynamicForecast.html')
 
 @app.route('/multi',methods=["POST","GET"])
 def multi():
@@ -93,6 +104,13 @@ def add_header(response):
     response.headers['Cache-Control'] = 'public, max-age=0'
     return response
 
+@app.errorhandler(404)
+def pageNotFound(error):
+    return render_template('404.html')
+
+@app.errorhandler(500)
+def notFound(error):
+    return render_template('error.html')
 
 if __name__ == "__main__":
     app.run()

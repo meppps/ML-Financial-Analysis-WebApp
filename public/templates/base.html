@@ -6,29 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
- 
+    <!-- CSS only -->
+
+<!-- JS, Popper.js, and jQuery -->
 
 </head>
 
 <body>
     <nav class="nav">
-        ML Financial Analysis
-    
-</nav>
-<!-- <button class="hamburger">
-    <span class="let"></span>
-    <span class="let">
-    <span class="let"></span>
-    </span>
-</button> -->
-<div class="menu">
-    <a href="" style="float:right;color:#fff;border: 1px solid white;">Menu</a>
-    <div class="sub">
-        <a href="/">Home</a>
-        <a href="/submit">Forecasting</a>
-        <a href="/multi">Stock Comparison</a>
-    </div>
-</div>
+        <h2 class="center">ML Financial Analysis</h2>
+        <a href="/">Home</a> <a href="/prediction">Forecasting</a><a href="/multi">Stock Comparison</a>
+    </nav>
+
 
 
     {% block content %}
@@ -36,16 +25,5 @@
 
 </body>
 </html>
-<script>
-    document.querySelector('.menu').addEventListener('mouseover',()=>{
-    document.querySelector('.sub').classList.remove('hidden')
-    });
-
-    document.querySelector('.menu').addEventListener('mouseout',()=>{
-        document.querySelector('.sub').classList.add('hidden')
-    });
-    
-</script>
-<script src="./static/markethours.js"></script>
 
     
