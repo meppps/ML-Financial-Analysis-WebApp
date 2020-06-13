@@ -11,8 +11,9 @@ The symbol you input is passed through to Yahoo Finance API. The app then web sc
 ## Usage
 
 ### Forecasting
-[Prediction Page]: https://ml-fintech.herokuapp.com/prediction/
 
+Preidction page\
+https://ml-fintech.herokuapp.com/prediction/
 - Enter a ticker
 - Start date of data you want to feed
 - Last date (cannot be in the future! Use todays date)
@@ -25,7 +26,8 @@ The symbol you input is passed through to Yahoo Finance API. The app then web sc
 ![](samples/sampleforecast.png)
 
 ### Multistock comparison
-[Stock Comparison Page]: https://ml-fintech.herokuapp.com/multi
+Stock Comparison Page\
+https://ml-fintech.herokuapp.com/multi
 - Enter a ticker and date range
 - The heatmap displays possible correlation between stocks
 - Scatter plot displays expected returns between stocks
