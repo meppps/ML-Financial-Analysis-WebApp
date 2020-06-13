@@ -1,6 +1,5 @@
 # Machine Learning Stock Forecasting Web App
 
-png
 
 ## About
 This project makes use of machine learning algorithms and technical indicators to perform financial analysis on any stock. The app is built on several technologies including Python, Flask, Pandas, and Matplotlib. This project is for experimental purposes with data ETL and machine learning. This algorithm is far from perfect and shouldn't be used
