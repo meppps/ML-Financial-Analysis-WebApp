@@ -11,7 +11,7 @@ def scrape(stock):
     r = requests.get(url, headers=header)
     dfs = pd.read_html(r.text)
 
-    df = dfs[6]
+    df = dfs[5]
     col1 = df[[0,1]].set_index(0)[1]
     marketCap = col1['Market Cap']
     col2 = df[[10,11]].set_index(10)[11]
