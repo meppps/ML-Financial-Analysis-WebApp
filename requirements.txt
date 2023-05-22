@@ -3,5 +3,5 @@ pandas-datareader==0.8.1
 Flask==1.1.1
 matplotlib==3.1.0
 scikit-learn==0.21.2
-requests==2.22.0
+requests==2.31.0
 gunicorn==20.0.4
